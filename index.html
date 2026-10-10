@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>游戏筛选 · ADX 检索库</title><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<header class="topbar">
+  <div class="brand"><i></i>ADX 检索库</div>
+  <nav class="tabs"><a class="on" href="index.html">游戏筛选</a><a href="library.html">库内容</a></nav>
+  <div class="search"><input id="q" placeholder="搜索游戏名 / 题材 / 玩法"></div>
+  <div class="user"><span class="avatar"></span>大海</div>
+</header>
+<div class="layout">
+  <aside class="side">
+    <div class="side-hd">筛选条件 <button class="link" id="resetAll">重置</button></div>
+    <div class="side-bd" id="facets"></div>
+    <div class="side-ft"><button class="btn pri block" id="viewBtn">查看 0 条</button>
+      <div class="note" style="text-align:center">跳转库内容，带上当前结果的游戏</div></div>
+  </aside>
+  <main class="main">
+    <div class="panel" style="padding:10px 14px"><div class="chipbar" id="chips"></div></div>
+    <div class="toolbar">
+      <div class="count" id="count"></div>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <span class="count">时间窗</span>
+        <select class="select" id="range"><option>近 7 天</option><option>近 30 天</option><option>近 90 天</option></select>
+        <select class="select" id="sort">
+          <option value="likes">点赞前100（从高到低）</option>
+          <option value="plays">播放前100（从高到低）</option>
+          <option value="trend">近期涨幅（从高到低）</option>
+          <option value="name">游戏名（A→Z）</option>
+        </select>
+        <span class="count">名单 <b id="listCount">0</b> 款</span>
+      </div>
+    </div>
+    <div class="panel" id="result" style="overflow:hidden"></div>
+    <p class="note">数据为演示假数据，未调用 ADX MCP。点赞/播放前100 = 该游戏点赞/播放量前 100 条素材的累计值，口径以实际接口为准。</p>
+  </main>
+</div>
+<script src="assets/data.js"></script>
+<script src="assets/filter.js"></script>
+</body></html>
