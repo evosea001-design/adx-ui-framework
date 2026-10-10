@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>库内容 · ADX 检索库</title><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<header class="topbar">
+  <div class="brand"><i></i>ADX 检索库</div>
+  <div class="crumb"><a href="index.html" id="backLink">游戏筛选</a> / <b>库内容</b></div>
+  <div class="search"><input id="q" placeholder="搜索素材文案 / 标签 / ADX ID"></div>
+  <div class="user"><span class="avatar"></span>大海</div>
+</header>
+<div id="wrap">
+<div class="layout">
+  <aside class="side">
+    <div class="side-hd">筛选素材 <button class="link" id="resetAll">重置</button></div>
+    <div class="side-bd" id="facets"></div>
+  </aside>
+  <main class="main">
+    <div class="panel" style="padding:10px 14px"><div class="chipbar" id="chips"></div></div>
+    <div class="toolbar">
+      <span class="stat" id="stat"></span>
+      <div class="seg" id="views"><button data-v="masonry">▦ 瀑布流</button><button data-v="grid">▤ 网格</button><button data-v="table">☰ 表格</button></div>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <span class="count" id="count"></span>
+        <select class="select" id="sort">
+          <option value="date">入库时间（最新在前）</option>
+          <option value="likes">点赞数（从高到低）</option>
+          <option value="plays">播放量（从高到低）</option>
+          <option value="days">使用天数（从长到短）</option>
+        </select>
+      </div>
+    </div>
+    <div id="result"></div>
+    <div class="pager" id="pager"></div>
+  </main>
+</div>
+</div>
+<aside class="drawer" id="drawer" aria-label="素材详情">
+  <div class="drawer-hd"><span>素材详情</span><button class="x" id="closeDrawer" title="关闭 (Esc)">✕</button></div>
+  <div class="drawer-bd" id="drawerBd"></div>
+  <div class="drawer-ft">
+    <button class="btn" data-op="收藏">☆ 收藏</button><button class="btn" data-op="打标签">⌗ 打标签</button>
+    <button class="btn" data-op="标记重复">⚑ 标记重复</button><button class="btn" data-op="导出">⇩ 导出</button>
+  </div>
+</aside>
+<script src="assets/data.js"></script>
+<script src="assets/library.js"></script>
+</body></html>
